@@ -7,6 +7,7 @@ import {
   Check,
   CaretLeft,
   CaretRight,
+  Key,
 } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,7 @@ import { useRef, useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {
   REPO_URL,
+  REQUEST_ACCESS_MAILTO,
   stats,
   whatFeatures,
   knowledgeBases,
@@ -65,17 +67,25 @@ function Nav() {
           )}
         </div>
 
-        <Button variant="ghost" size="sm" asChild>
-          <a
-            href={REPO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
-          >
-            <GithubLogo weight="fill" size={18} />
-            <span className="hidden sm:inline">GitHub</span>
-          </a>
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button variant="ghost" size="sm" asChild>
+            <a
+              href={REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <GithubLogo weight="fill" size={18} />
+              <span className="hidden sm:inline">GitHub</span>
+            </a>
+          </Button>
+          <Button variant="accent" size="sm" asChild>
+            <a href={REQUEST_ACCESS_MAILTO} className="flex items-center gap-2">
+              <Key weight="bold" size={16} />
+              <span className="hidden sm:inline">Get Access</span>
+            </a>
+          </Button>
+        </div>
       </motion.div>
     </nav>
   );
@@ -143,6 +153,12 @@ function Hero() {
             >
               View repository
               <ArrowRight weight="bold" size={20} />
+            </a>
+          </Button>
+          <Button variant="accent" size="lg" asChild>
+            <a href={REQUEST_ACCESS_MAILTO} className="flex items-center gap-2">
+              <Key weight="bold" size={20} />
+              Get access
             </a>
           </Button>
           <Button variant="outline" size="lg" asChild>
@@ -782,9 +798,11 @@ function Footer() {
 function SectionHeader({
   title,
   subtitle,
+  showAccess = true,
 }: {
   title: string;
   subtitle: React.ReactNode;
+  showAccess?: boolean;
 }) {
   return (
     <motion.div
@@ -800,6 +818,19 @@ function SectionHeader({
       <p className="text-lg md:text-[22px] text-muted-foreground leading-relaxed font-light">
         {subtitle}
       </p>
+      {showAccess && (
+        <div className="flex justify-center pt-2">
+          <Button variant="outline" size="sm" asChild>
+            <a
+              href={REQUEST_ACCESS_MAILTO}
+              className="flex items-center gap-2"
+            >
+              <Key weight="bold" size={16} />
+              Get Access
+            </a>
+          </Button>
+        </div>
+      )}
     </motion.div>
   );
 }
