@@ -738,7 +738,7 @@ function CTASection() {
             asChild
           >
             <a
-              href="https://azure-samples.github.io/factory-agents-forge"
+              href="https://azure-samples.github.io/faf-kb-landing-page/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
