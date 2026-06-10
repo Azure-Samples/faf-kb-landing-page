@@ -427,3 +427,9 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Vite / Node build output
+dist/
+.vite/
+npm-debug.log*
+*.local
