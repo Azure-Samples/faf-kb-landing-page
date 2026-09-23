@@ -1,0 +1,17 @@
+# Documentation for ACL policy: https://aka.ms/gim/docs/policy/acl
+# Migrated from Azure-Samples
+name: Access control list
+description: List of teams and their permission levels
+resource: repository
+where: 
+configuration:
+  manageAccess:
+  - member: nadeemis
+    role: Maintain
+  - member: Raiy
+    role: Maintain
+  - member: erikbohn
+    role: Maintain
+  - member: shahshaikh
+    role: Maintain
+  
