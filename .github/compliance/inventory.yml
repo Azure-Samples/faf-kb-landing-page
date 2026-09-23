@@ -1,0 +1,7 @@
+# Documentation for Inventory policy: https://eng.ms/docs/more/github-inside-microsoft/policies/inventory
+# Migrated from Azure-Samples
+inventory:
+- source: ServiceTree
+  items:
+  - id: 99d1df55-5608-4141-bb72-b199298c1fac
+  isProduction: false
